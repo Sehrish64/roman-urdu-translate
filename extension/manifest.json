@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Roman Urdu Translate",
+  "version": "1.1.0",
+  "description": "Koi bhi text select karo, seedha Roman Urdu mein tarjuma (Urdu script nahi, jaisa Pakistani WhatsApp par likhte hain).",
+  "permissions": ["storage", "contextMenus"],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.groq.com/*",
+    "https://*.workers.dev/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "action": { "default_title": "Roman Urdu Translate" },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roman Urdu Translate - Settings</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, sans-serif; max-width: 620px; margin: 40px auto; padding: 0 16px; line-height: 1.55; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .sub { color: #6b7280; margin-top: 0; }
+  label { display:block; font-weight: 600; margin: 18px 0 6px; font-size: 14px; }
+  input, select { width: 100%; padding: 9px 10px; font-size: 14px; border-radius: 8px; border: 1px solid #9ca3af; background: transparent; color: inherit; }
+  button { margin-top: 22px; padding: 10px 18px; font-size: 14px; font-weight: 600; background:#0f9d58; color:#fff; border:0; border-radius: 8px; cursor:pointer; }
+  .hint { font-size: 12.5px; color:#6b7280; margin-top:4px; }
+  .ok { color:#0f9d58; margin-left:10px; font-weight:600; }
+  .box { background: rgba(15,157,88,.08); border: 1px solid rgba(15,157,88,.3); padding: 10px 14px; border-radius: 10px; font-size: 13.5px; }
+  .hide { display:none; }
+  a { color:#0f9d58; }
+</style>
+</head>
+<body>
+<h1>🇵🇰 Roman Urdu Translate</h1>
+<p class="sub">Text select karo → "Roman Urdu" button dabao. Bas.</p>
+
+<div class="box">
+  <b>Default: Free Proxy</b> — koi key nahi chahiye, tarjuma hamare server se hota hai.<br>
+  Sirf tab key lagao jab Provider mein apna Gemini/Groq chunna ho:<br>
+  <b>Gemini:</b> <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a> par Google account se login karke "Create API key".<br>
+  <b>Groq:</b> <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a> par key banao.<br>
+  Apni key sirf aapke browser mein save hoti hai.
+</div>
+
+<label for="provider">Provider</label>
+<select id="provider">
+  <option value="proxy">Free Proxy (koi key nahi) — default</option>
+  <option value="gemini">Google Gemini (apni key)</option>
+  <option value="groq">Groq (apni key)</option>
+</select>
+
+<div id="geminiBox">
+  <label for="geminiKey">Gemini API key</label>
+  <input id="geminiKey" type="password" placeholder="AIza..." autocomplete="off">
+  <label for="geminiModel">Gemini model</label>
+  <input id="geminiModel" type="text">
+  <div class="hint">Agar model ka naam purana ho jaye aur error aaye, yahan naya naam likh do.</div>
+</div>
+
+<div id="groqBox" class="hide">
+  <label for="groqKey">Groq API key</label>
+  <input id="groqKey" type="password" placeholder="gsk_..." autocomplete="off">
+  <label for="groqModel">Groq model</label>
+  <input id="groqModel" type="text">
+</div>
+
+<label for="style">Andaaz (style)</label>
+<select id="style">
+  <option value="casual">Casual (WhatsApp wala)</option>
+  <option value="simple">Aasan (student ko samjhane wala)</option>
+  <option value="formal">Formal (tameez wala)</option>
+</select>
+
+<button id="save">Save</button><span id="msg" class="ok"></span>
+<script src="options.js"></script>
+</body>
+</html>
